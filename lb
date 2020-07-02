@@ -1,9 +1,9 @@
 #!/bin/bash
-name="Luke Smith"
+name="R. Nicolás Savinelli"
 webdir="$PWD"
-website="https://lukesmith.xyz/" # Keep a trailing slash.
-css="../style.css"
-blogfile="$(date +%Y).html"
+website="https://rnsavinelli.github.io/" # Keep a trailing slash.
+css="../css/stylesheet.css"
+blogfile="blog.html"
 indexfile="blogindex.html"
 rssfile="rss.xml"
 [ -z "$EDITOR" ] && EDITOR="vim"
