@@ -6,7 +6,7 @@ nlb is published and distributed as a modified version of [Luke Smith's lb](http
 
 nlb, which stands for "Nicolás's lb", is an extended (and not so slim) version of lb catered for needs.
 
-For a list of all changes made to the original script see the [`CHANGELOG`](https://github.com/rnsavinelli/nlb/blob/blog/CHANGELOG).
+For a list of all changes made to the original script review the [`CHANGELOG`](https://github.com/rnsavinelli/nlb/blob/blog/CHANGELOG).
 
 For licensing details refer to the [`LICENSE`](https://github.com/rnsavinelli/nlb/blob/blog/LICENSE) file.
 
