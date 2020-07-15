@@ -2,16 +2,16 @@
 
 Blogs and RSS feeds in about 100 lines of shell script.
 
-Published and distributed as a modified version of [Luke Smith's lb](https://github.com/LukeSmithxyz/lb) under the GPLV3 license.
+nlb is published and distributed as a modified version of [Luke Smith's lb](https://github.com/LukeSmithxyz/lb) under the GPLV3 license.
 
 nlb, which stands for "Nicolás's lb", is an extended (and not so slim) version of lb catered for needs.
-
-This fork will be kept up-to-date with Luke's upstream version as long as updates are proven to be useful, or valuable. For instance, commit [f13cf1a](https://github.com/LukeSmithxyz/lb/commit/f13cf1a3a642dcaa6eb188b15db4e36450edcabd) 
-seemed to be an improvement at first, but it ended up obfuscating the user's experience. See pull request [#35](https://github.com/LukeSmithxyz/lb/pull/35) and commit [66e2a7a](https://github.com/LukeSmithxyz/lb/commit/66e2a7a1eda6d835266d8ad62270d87b50ee488c) for more details.
 
 For a list of all changes made to the original script see the [`CHANGELOG`](https://github.com/rnsavinelli/nlb/blob/blog/CHANGELOG).
 
 For licensing details, distributability and modifyability refer to the [`LICENSE`](https://github.com/rnsavinelli/nlb/blob/blog/LICENSE) file.
+
+IMPORTANT: This fork will be kept up-to-date with Luke's upstream version as long as updates are proven to be useful, or valuable. For instance, commit [f13cf1a](https://github.com/LukeSmithxyz/lb/commit/f13cf1a3a642dcaa6eb188b15db4e36450edcabd) 
+seemed to be an improvement at first, but it ended up obfuscating the user's experience. See pull request [#35](https://github.com/LukeSmithxyz/lb/pull/35) and commit [66e2a7a](https://github.com/LukeSmithxyz/lb/commit/66e2a7a1eda6d835266d8ad62270d87b50ee488c) for more details.
 
 ## Features
 
@@ -53,7 +53,7 @@ For licensing details, distributability and modifyability refer to the [`LICENSE
 
 ### Markers
 
-IMPORTANT: Unmodified to grant backwards compatibility with `lb`.
+IMPORTANT: `lb` markers were NOT modified to grant backwards compatibility.
 
 For the system to work, add the following comment line to a (1) Rolling Blog File (as above), a (2) Blog List File and (3) RSS feed.
 
