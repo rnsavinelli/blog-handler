@@ -1,12 +1,17 @@
-# nlb -- Nicolás's Luke's Blog Script (Nicolas's lb)
+# nlb - rnsavinelli's version of Luke's Blog Script
 
 Blogs and RSS feeds in about 100 lines of shell script.
 
-Published and distributed as a modified version of [Luke Smith's lb](https://github.com/LukeSmithxyz/lb) (and under the same license), nlb is an improved, and not so slim version, of it catered for my needs. 
+nlb is published and distributed as a modified version of [Luke Smith's lb](https://github.com/LukeSmithxyz/lb) under the GPLV3 license.
+
+nlb, which stands for "Nicolás's lb", is an extended (and not so slim) version of lb catered for needs.
 
 For a list of all changes made to the original script see the [`CHANGELOG`](https://github.com/rnsavinelli/nlb/blob/blog/CHANGELOG).
 
 For licensing details, distributability and modifyability refer to the [`LICENSE`](https://github.com/rnsavinelli/nlb/blob/blog/LICENSE) file.
+
+IMPORTANT: This fork will be kept up-to-date with Luke's upstream version as long as updates are proven to be useful, or valuable. For instance, commit [f13cf1a](https://github.com/LukeSmithxyz/lb/commit/f13cf1a3a642dcaa6eb188b15db4e36450edcabd) 
+seemed to be an improvement at first, but it ended up obfuscating the user's experience. See pull request [#35](https://github.com/LukeSmithxyz/lb/pull/35) and commit [66e2a7a](https://github.com/LukeSmithxyz/lb/commit/66e2a7a1eda6d835266d8ad62270d87b50ee488c) for more details.
 
 ## Features
 
@@ -15,8 +20,8 @@ For licensing details, distributability and modifyability refer to the [`LICENSE
 - A Rolling Blog Page. See [my own Rolling Page](https://rnsavinelli.github.io/blog.html) as an example.
 - A list of all blog entries with dates: [Blog List File](https://rnsavinelli.github.io/blogindex.html).
 - All your blog posts appear as standalone entries/pages, for example [like this one](https://rnsavinelli.github.io/blog/now-plotting-network-traffic.html).
-- These standalone files exist in a `blog/` directory, which you can allow to be browsed manually via your Apache web server as Luke Smith has [here](http://lukesmith.xyz/blog).
-- Blog posts are added, in full form, to an RSS feed of your chosing as well, see [my RSS feed](https://rnsavinelli.githu.io/rss.xml).
+- These standalone files exist in a `blog/` directory, which you can allow to be browsed manually via your Apache web server.
+- Blog posts are added, in full form, to an RSS feed of your chosing as well, see [my RSS feed](https://rnsavinelli.github.io/rss.xml).
 - Posts in the rolling blog have divs that can easily be modified via a CSS stylesheet, and in general everything is easily editable.
 - One command to delete published entries from the RSS feed, rolling blog and standalone entries simultaneously.
 - Published blog entries can now be revised, updating the standalone blog pages, the RSS feed and everything else.
@@ -48,7 +53,7 @@ For licensing details, distributability and modifyability refer to the [`LICENSE
 
 ### Markers
 
-IMPORTANT: Unmodified to grant backwards compatibility with `lb`.
+IMPORTANT: `lb` markers were NOT modified to grant backwards compatibility.
 
 For the system to work, add the following comment line to a (1) Rolling Blog File (as above), a (2) Blog List File and (3) RSS feed.
 
