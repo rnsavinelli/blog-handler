@@ -51,16 +51,15 @@ _newpost() {
 
 list() {
     printf "Listing contents of %s\\n" "$1"
-    case "$(ls "$1" | wc -l)" in
+    case "$(ls -F "$1" | grep -v '[/@=|]$' | wc -l)" in
         0) echo "There's nothing to list." && exit 1 ;;
-        *) ls -rc "$1" | awk -F '/' '{print $NF}' | nl ;;
+        *) ls -Frc "$1" | grep -v '[/@=|]$' | awk -F '/' '{print $NF}' | nl ;;
     esac
 }
 
 _listandPrompt() {
-    local number = -1
     list "$1" "$2" && read -erp "Pick an entry by number to $2, or press Ctrl-C to cancel. " number
-    if [ "$number" != "-1" ]; then
+    if [[ "$number" != -1 ]]; then
         chosen="$(ls -rc "$1" | nl | grep -w "$number" | awk '{print $2}')"
         basefile="$(basename "$chosen")" && base="${basefile%.*}"
     fi
