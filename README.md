@@ -4,7 +4,7 @@ Blogs and RSS feeds in about 100 lines of shell script.
 
 Published and distributed as a modified version of [Luke Smith's lb](https://github.com/LukeSmithxyz/lb) (and under the same license), nlb is an improved, and not so slim version, of it catered for my needs. 
 
-For list of all changes made to the original see the [`CHANGELOG`](https://github.com/rnsavinelli/nlb/blob/blog/CHANGELOG).
+For a list of all changes made to the original script see the [`CHANGELOG`](https://github.com/rnsavinelli/nlb/blob/blog/CHANGELOG).
 
 For licensing details, distributability and modifyability refer to the [`LICENSE`](https://github.com/rnsavinelli/nlb/blob/blog/LICENSE) file.
 
