@@ -1,4 +1,10 @@
 #!/bin/bash
+#
+# Blogs and RSS feeds in about 100 lines of shell script.
+#
+# (c) 2018-2020 Luke Smith <luke@lukesmith.xyz>
+# (c) 2020 Savinelli Roberto Nicolás <rsavinelli@est.frba.utn.edu.ar>
+
 name="R. Nicolás Savinelli"
 webdir="$PWD"
 website="https://rnsavinelli.github.io/" # Keep a trailing slash.
@@ -18,7 +24,22 @@ else
 	exit
 fi
 
-newpost() { read -erp "Give a title for your post:
+_usageinfo() {
+     printf \
+        "nlb blog system by R Nicolás Savinelli <rsavinelli@est.frba.utn.edu.ar>\\nA forked version of the lb blog system by Luke Smith <luke@lukesmith.xyz>\\n\\nUsage: nlb [OPTION]\\n\\n\
+        nlb n:\\tnew draft\\n\
+        nlb e:\\tedit draft\\n\
+        nlb t:\\tdiscard draft\\n\
+        nlb p:\\tpublish/finalize draft\\n\\n\
+        nlb r:\\trevise published entry\\n\
+        nlb d:\\tdelete published entry\\n\\n\
+        nlb l:\\tlist drafts\\n\
+        nlb h:\\tprint published entries history\\n\\n"
+    printf \
+        "Be sure to have the following pattern added to your RSS feed,\\nblog file and blog index:\\n\\n<!-- LB -->\\n\\nNew content will be added directly below that sequence. This is required.\\nSee https://github.com/rnsavinelli/nlb for more information.\\n"
+}
+
+_newpost() { read -erp "Give a title for your post:
 	" title
 	echo "$title" | grep -q "\"" && printf "Double quotation marks (\") are not allowed in entry titles.\\n" && exit
 	url="$(echo "$title" | iconv -cf UTF-8 -t ASCII//TRANSLIT | tr -d '[:punct:]' | tr '[:upper:]' '[:lower:]' | tr ' ' '-' | sed "s/-\+/-/g;s/\(^-\|-\$\)//g")"
@@ -26,20 +47,25 @@ newpost() { read -erp "Give a title for your post:
 	( [ -f "$webdir/blog/.drafts/$url.html" ] || [ -f "$webdir/blog/$url.html" ] ) && echo "There is already an existing draft or post of that same name/URL." && exit
 	$EDITOR "$webdir/blog/.drafts/$url.html" ;}
 
-listandReturn() {
+list() {
 	printf "Listing contents of %s\\n" "$1"
-	case "$(ls "$1" | wc -l)" in
-		0) echo "There's nothing to $2." && exit 1 ;;
-		1) number=1 && printf "There's only one entry to %s.\\nDefaulting selection to %s\\n" "$2" "$(ls -rc "$1" | awk -F '/' '{print $NF}')" ;;
-		*) ls -rc "$1" | awk -F '/' '{print $NF}' | nl
-                read -erp "Pick an entry by number to $2, or press Ctrl-C to cancel. " number ;;
-	esac
-	chosen="$(ls -rc "$1" | nl | grep -w "$number" | awk '{print $2}')"
-	basefile="$(basename "$chosen")" && base="${basefile%.*}"
+    case "$(ls "$1" | wc -l)" in
+        0) echo "There's nothing to list." && exit 1 ;;
+		*) ls -rc "$1" | awk -F '/' '{print $NF}' | nl ;;
+    esac
 }
 
-publish() { \
-	delete draft
+_listandPrompt() {
+    local number = -1
+    list "$1" "$2" && read -erp "Pick an entry by number to $2, or press Ctrl-C to cancel. " number
+    if [ "$number" != "-1" ]; then
+        chosen="$(ls -rc "$1" | nl | grep -w "$number" | awk '{print $2}')"
+	    basefile="$(basename "$chosen")" && base="${basefile%.*}"
+    fi
+}
+
+_publish() { \
+	_delete draft
 	htaccessentry=$(grep "$basefile" "$webdir/blog/.htaccess")
 	realname="$(echo "$htaccessentry" | cut -d'"' -f2)"
 	rssdate="$(grep "$basefile" blog/.htaccess | sed "s/.*\.html\"* *#*//g" | tr -d '\n')"
@@ -60,22 +86,24 @@ publish() { \
 
 confirm() { read -erp "Really $1 \"$base\"? (y/N) " choice && echo "$choice" | grep -qi "^y$" || exit 1 ;}
 
-delete() { \
+_delete() { \
 	sed -i "/<item/{:a;N;/<\\/item>/!ba};/#$base<\\/guid/d" "$rssfile"
 	sed -i "/<div class='entry'>/{:a;N;/<\\/div>/!ba};/id='$base'/d" "$blogfile"
 	sed -i "/<li>.*<a href=\"blog\\/$base.html\">/d" "$indexfile"
 	rm -f "$webdir/blog/$basefile" && [[ "$1" != "draft" ]] && printf "Old blog entry removed.\\n";}
 
-revise() { awk '/^<small>\[/{flag=1;next}/<footer>/{flag=0}flag' "$webdir/blog/$chosen" > "$webdir/blog/.drafts/$basefile"
+_revise() { awk '/^<small>\[/{flag=1;next}/<footer>/{flag=0}flag' "$webdir/blog/$chosen" > "$webdir/blog/.drafts/$basefile"
 	"$EDITOR" "$webdir/blog/.drafts/$basefile"
 	printf "Revision stored in blog/.drafts. Publish as normal entry when desired.\\n" ;}
 
 case "$1" in
-	n*) newpost ;;
-	e*) listandReturn "$webdir"/blog/.drafts/ edit && "$EDITOR" "$webdir/blog/.drafts/$chosen" ;;
-	p*) listandReturn "$webdir"/blog/.drafts/ publish && publish ;;
-	t*) listandReturn "$webdir"/blog/.drafts/ trash && confirm trash && rm -f "$webdir/blog/.drafts/$chosen" && sed -i "/ \"$base.html\"/d" "$webdir/blog/.htaccess" ; printf "Draft deleted.\\n" ;;
-	d*) listandReturn "$webdir"/blog/ delete && confirm delete && delete && sed -i "/ \"$base.html\"/d" "$webdir/blog/.htaccess" ;;
-	r*) listandReturn "$webdir"/blog/ revise && revise ;;
-	*) printf "lb blog system by Luke Smith <luke@lukesmith.xyz>\\nUsage:\\n  lb n:\\tnew draft\\n  lb e:\\tedit draft\\n  lb p:\\tpublish/finalize draft\\n  lb r:\\trevise published entry\\n  lb t:\\tdiscard draft\\n  lb d:\\tdelete published entry\\n\\nBe sure to have the following pattern added to your RSS feed, blog file and blog index:\\n\\n<!-- LB -->\\n\\nNew content will be added directly below that sequence. This is required.\\nSee https://github.com/LukeSmithxyz/lb for more.\\n" ;;
+	n*) _newpost ;;
+	e*) _listandPrompt "$webdir"/blog/.drafts/ edit && "$EDITOR" "$webdir/blog/.drafts/$chosen" ;;
+	p*) _listandPrompt "$webdir"/blog/.drafts/ publish && _publish ;;
+	t*) _listandPrompt "$webdir"/blog/.drafts/ trash && confirm trash && rm -f "$webdir/blog/.drafts/$chosen" && sed -i "/ \"$base.html\"/d" "$webdir/blog/.htaccess" ; printf "Draft deleted.\\n" ;;
+	d*) _listandPrompt "$webdir"/blog/ delete && confirm delete && _delete && sed -i "/ \"$base.html\"/d" "$webdir/blog/.htaccess" ;;
+	r*) _listandPrompt "$webdir"/blog/ revise && _revise ;;
+    h*) list "$webdir"/blog/ ;;
+    l*) list "$webdir"/blog/.drafts/ ;;
+    *) _usageinfo ;;
 esac
