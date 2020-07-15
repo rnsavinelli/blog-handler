@@ -6,7 +6,7 @@
 - A new `_list()` function was introduced to make the code more extensible.
 - `_listandReturn()` has been renamed to `_listandPrompt()`, and modified to make use of `_list()`.
 - Defaulting selection when a single entry was listed by lb was removed.
-- All HTML, CSS, RSS files were modified to mirror mines.
+- All HTML, CSS, RSS files were modified to mirror mine.
 - The README.md file was altered to reflect how nlb works.
 - When possible the code has been decompressed. i.e.:
 
@@ -17,5 +17,3 @@
     confirm() {
         read -erp "Really $1 \"$base\"? (y/N) " choice && echo "$choice" | grep -qi "^y$" || exit 1
     }
-
-
