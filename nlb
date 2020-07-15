@@ -58,8 +58,9 @@ list() {
 }
 
 _listandPrompt() {
+    local number="-1"
     list "$1" "$2" && read -erp "Pick an entry by number to $2, or press Ctrl-C to cancel. " number
-    if [[ "$number" != -1 ]]; then
+    if [[ "$number" != "-1" ]]; then
         chosen="$(ls -rc "$1" | nl | grep -w "$number" | awk '{print $2}')"
         basefile="$(basename "$chosen")" && base="${basefile%.*}"
     fi
