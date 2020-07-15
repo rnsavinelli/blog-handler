@@ -15,8 +15,8 @@ For licensing details, distributability and modifyability refer to the [`LICENSE
 - A Rolling Blog Page. See [my own Rolling Page](https://rnsavinelli.github.io/blog.html) as an example.
 - A list of all blog entries with dates: [Blog List File](https://rnsavinelli.github.io/blogindex.html).
 - All your blog posts appear as standalone entries/pages, for example [like this one](https://rnsavinelli.github.io/blog/now-plotting-network-traffic.html).
-- These standalone files exist in a `blog/` directory, which you can allow to be browsed manually via your Apache web server as Luke Smith has [here](http://lukesmith.xyz/blog).
-- Blog posts are added, in full form, to an RSS feed of your chosing as well, see [my RSS feed](https://rnsavinelli.githu.io/rss.xml).
+- These standalone files exist in a `blog/` directory, which you can allow to be browsed manually via your Apache web server.
+- Blog posts are added, in full form, to an RSS feed of your chosing as well, see [my RSS feed](https://rnsavinelli.github.io/rss.xml).
 - Posts in the rolling blog have divs that can easily be modified via a CSS stylesheet, and in general everything is easily editable.
 - One command to delete published entries from the RSS feed, rolling blog and standalone entries simultaneously.
 - Published blog entries can now be revised, updating the standalone blog pages, the RSS feed and everything else.
