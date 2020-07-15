@@ -1,7 +1,7 @@
 #!/bin/bash
-#
 # nlb: blogs and rss feeds in about 100 lines of shell script.
-# nlb version: 0.1
+# https://github.com/rnsavinelli/nlb
+# nlb version: 1.0
 #
 # (c) 2018-2020 Luke Smith <luke@lukesmith.xyz>
 # (c) 2020 Savinelli Roberto Nicolás <rsavinelli@est.frba.utn.edu.ar>
