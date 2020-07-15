@@ -1,13 +1,15 @@
-[VERSION 0.1]
+[VERSION 1.0]
 
 - The initialization mechanism has been modified.
-- Most functions have been renamed to follow a different coding style with private functions having an underscore prepended.
+- Most functions have been renamed to follow a different coding style, with private functions having an underscore prepended.
 - A new `_usageinfo()` function was introduced to make the code more readable.
 - A new `_list()` function was introduced to make the code more extensible.
-- `_listandReturn()` has been renamed to `_listandPrompt()`, and modified to make use of `_list()`.
+- `listandReturn()` has been renamed to `_listandPrompt()`, and modified to make use of `_list()`.
 - Defaulting selection when a single entry was listed by lb was removed.
 - All HTML, CSS, RSS files were modified to mirror mine.
 - The README.md file was altered to reflect how nlb works.
+- The user can now have directories inside the blog directory.
+  In previous versions of lb, this issue would mess up the entries numbering when `listandReturn()` was called.
 - When possible the code has been decompressed. i.e.:
 
     confirm() { read -erp "Really $1 \"$base\"? (y/N) " choice && echo "$choice" | grep -qi "^y$" || exit 1;}

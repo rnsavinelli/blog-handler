@@ -27,15 +27,15 @@ fi
 
 _usageinfo() {
      printf \
-        "nlb blog system by R Nicolás Savinelli <rsavinelli@est.frba.utn.edu.ar>\\nA forked version of the lb blog system by Luke Smith <luke@lukesmith.xyz>\\n\\nUsage: nlb [OPTION]\\n\\n\
+        "nlb v1.0 Blogs and RSS feeds in about 100 lines of shell script.\\nCopyright (c) 2020 R Nicolás Savinelli <rsavinelli@est.frba.utn.edu.ar>\\nCopyright (c) 2018-2020 Luke Smith <luke@lukesmith.xyz>\\n\\nUsage: nlb [OPTION]\\n\\n\
         nlb n:\\tnew draft\\n\
         nlb e:\\tedit draft\\n\
         nlb t:\\tdiscard draft\\n\
+        nlb l:\\tlist drafts\\n\
         nlb p:\\tpublish/finalize draft\\n\\n\
         nlb r:\\trevise published entry\\n\
-        nlb d:\\tdelete published entry\\n\\n\
-        nlb l:\\tlist drafts\\n\
-        nlb h:\\tprint published entries history\\n\\n"
+        nlb d:\\tdelete published entry\\n\
+        nlb h:\\tlist published entries (publication history)\\n\\n"
     printf \
         "Be sure to have the following pattern added to your RSS feed,\\nblog file and blog index:\\n\\n<!-- LB -->\\n\\nNew content will be added directly below that sequence. This is required.\\nSee https://github.com/rnsavinelli/nlb for more information.\\n"
 }
