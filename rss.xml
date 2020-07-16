@@ -13,6 +13,16 @@
 <!-- LB -->
 
 <item>
+<title>This is what having two posts look like</title>
+<guid>https://rnsavinelli.github.io/blog.html#this-is-what-having-two-posts-look-like</guid>
+<pubDate>Thu, 16 Jul 2020 11:21:17 -0300</pubDate>
+<description><![CDATA[
+<p>Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</p>
+]]></description>
+</item>
+
+
+<item>
 <title>This is what a post looks like</title>
 <guid>https://rnsavinelli.github.io/blog.html#this-is-what-a-post-looks-like</guid>
 <pubDate>Wed, 15 Jul 2020 17:49:32 -0300</pubDate>

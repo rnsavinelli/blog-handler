@@ -1,3 +1,4 @@
 Options +Indexes
-AddDescription "This is what a post looks like" "this-is-what-a-post-looks-like.html" #Wed, 15 Jul 2020 17:49:32 -0300
+AddDescription "This is what a post looks like" "this-is-what-a-post-looks-like.html" #Thu, 16 Jul 2020 10:56:10 -0300
+AddDescription "This is what having two posts look like" "this-is-what-having-two-posts-look-like.html" #Thu, 16 Jul 2020 11:21:17 -0300
 AddDescription "This is what a draft looks like" "this-is-what-a-draft-looks-like.html"
