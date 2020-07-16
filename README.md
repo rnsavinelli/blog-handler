@@ -10,7 +10,7 @@ For a list of all changes made to the original script review the [`CHANGELOG`](h
 
 For licensing details refer to the [`LICENSE`](https://github.com/rnsavinelli/nlb/blob/blog/LICENSE) file.
 
-IMPORTANT: This fork will be kept up-to-date with Luke's upstream version as long as updates are proven to be useful, or valuable. For instance, commit [f13cf1a](https://github.com/LukeSmithxyz/lb/commit/f13cf1a3a642dcaa6eb188b15db4e36450edcabd) 
+IMPORTANT: This fork will be kept up-to-date with Luke's upstream version as long as updates are proven to be useful, or valuable. For instance, commit [f13cf1a](https://github.com/LukeSmithxyz/lb/commit/f13cf1a3a642dcaa6eb188b15db4e36450edcabd)
 seemed to be an improvement at first, but it ended up obfuscating the user's experience. See pull request [#35](https://github.com/LukeSmithxyz/lb/pull/35) and commit [66e2a7a](https://github.com/LukeSmithxyz/lb/commit/66e2a7a1eda6d835266d8ad62270d87b50ee488c) for more details.
 
 ## Features
@@ -19,6 +19,7 @@ seemed to be an improvement at first, but it ended up obfuscating the user's exp
 
 - A Rolling Blog Page. See [my own Rolling Page](https://rnsavinelli.github.io/blog.html) as an example.
 - A list of all blog entries with dates: [Blog List File](https://rnsavinelli.github.io/blogindex.html).
+- Idem but for the website's index: [my own Index Page](https://rnsavinelli.github.io/index.html).
 - All your blog posts appear as standalone entries/pages, for example [like this one](https://rnsavinelli.github.io/blog/now-plotting-network-traffic.html).
 - These standalone files exist in a `blog/` directory, which you can allow to be browsed manually via your Apache web server.
 - Blog posts are added, in full form, to an RSS feed of your chosing as well, see [my RSS feed](https://rnsavinelli.github.io/rss.xml).
@@ -34,12 +35,11 @@ seemed to be an improvement at first, but it ended up obfuscating the user's exp
 ./nlb n(ew)	# Make a new blog post draft.
 ./nlb e(dit)	# Edit a draft of an entry.
 ./nlb t(rash)	# Delete a draft of an entry.
+./nlb l(ist)	# List all drafts.
 ./nlb p(ublish)	# Finalize/publish a blog post draft.
 
 ./nlb d(elete)	# Delete a published blog post.
 ./nlb r(evise)	# Revise an already published entry (you can republish it with `nlb p` when done).
-
-./nlb l(ist)	# List all drafts.
 ./nlb h(istory)	# List published entries (publication history)
 ```
 
@@ -55,7 +55,7 @@ seemed to be an improvement at first, but it ended up obfuscating the user's exp
 
 IMPORTANT: `lb` markers were NOT modified to grant backwards compatibility.
 
-For the system to work, add the following comment line to a (1) Rolling Blog File (as above), a (2) Blog List File and (3) RSS feed.
+For the system to work, add the following comment line to a (1) Rolling Blog File (as above), a (2) Blog List File, a (3) Index File, and (4) RSS feed. See the example files provided with `nlb` to have a better picture.
 
 ```
 <!-- LB -->
