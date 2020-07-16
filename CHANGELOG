@@ -10,7 +10,7 @@
 - The README.md file was altered to reflect how nlb works.
 - The user can now have directories inside the blog directory.
   In previous versions of lb, this issue would mess up the entries numbering when `listandReturn()` was called.
-- When possible the code has been decompressed. i.e.:
+- Where possible the code has been decompressed. i.e.:
 
     confirm() { read -erp "Really $1 \"$base\"? (y/N) " choice && echo "$choice" | grep -qi "^y$" || exit 1;}
 
