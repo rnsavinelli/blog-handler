@@ -1,3 +1,8 @@
+[VERSION 1.3]
+- The hyperlinks generated for $websiteindexfile now differ from those generated for the $blogindexfile.
+- index file links now differ from those generated for the blog index
+- The <link> tag is now being implemented in the rss.xml file
+
 [VERSION 1.2]
 - `_listandPrompt` now has bound detection.
 - Entries are automatically listed inside index.html
