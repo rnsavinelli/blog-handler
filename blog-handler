@@ -62,7 +62,7 @@ _listandPrompt() {
     local number="0"
     list "$1" "$2" && read -erp "Pick an entry by number to $2, or press Ctrl-C to cancel. " number
     [[ "$number" -lt "1" ]] || [[ "$number" -gt "$(ls -F "$1" | grep -v '[/@=|]$' | wc -l)" ]] && echo "Error: There is no entry number $number." && exit 1
-    chosen="$(ls -Frc "$1" | grep -v '[/@=|]$' | nl | grep -w "$number" | awk '{print $2}')"
+    chosen="$(ls -Frc "$1" | grep -v '[/@=|]$' | nl | grep -w " $number" | awk '{print $2}')"
     basefile="$(basename "$chosen")" && base="${basefile%.*}"
 }
 
