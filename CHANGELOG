@@ -1,5 +1,5 @@
 [VERSION 2.0]
-- Fixed `./blog-handler -r` not displaying text when the <p> tag was present before a <small> tag.
+- Fixed `./blog-handler -r` not displaying text when the `<p>` tag was present before a `<small>` tag.
 - Directories inside the blog directory have been deprecated.
 - Added support for two css stylesheets/themes.
 - Bootstrap support added as the default html wrapper.
