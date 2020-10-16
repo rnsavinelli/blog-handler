@@ -3,7 +3,7 @@
 - Directories inside the blog directory have been deprecated.
 - Added support for two css stylesheets/themes.
 - Bootstrap support added as the default html wrapper.
-- Website template has been boostrapped.
+- A modified version of Bootswatch's Sandstone theme has been added.
 
 [VERSION 1.3]
 - Hyperlinks generated for $websiteindexfile now differ from those generated for $blogindexfile.
