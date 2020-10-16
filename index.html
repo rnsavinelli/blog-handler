@@ -3,38 +3,62 @@
 
 <head>
     <meta charset="utf-8"/>
-    <link rel='stylesheet' type='text/css' href='css/stylesheet.css'>
-    <title>index.html</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.mod.css">
+    <title>
+        index.html
+    </title>
 </head>
 
 <body>
 
-<h1>A First Level Header</h1>
-<p>Some text</p>
-<hr>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4 sticky-top">
+    <a class="navbar-brand" href="#">index.html</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Blog</a>
+                <div class="dropdown-menu dropdown-menu-right">
+					<a class="dropdown-item" href="blog.html">Blog Page</a>
+					<a class="dropdown-item" href="blogindex.html">Blog Index</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
 
 <main>
-<p><b>About this website</b></p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sed dapibus mauris. Aliquam erat volutpat. Morbi sit amet consectetur odio. Nulla quis suscipit nibh, eu gravida sapien. Aenean quis quam nunc. Quisque mollis sodales nisl, sed euismod quam pretium a. Vestibulum sem mauris, finibus quis interdum sed, volutpat sed sem.</p>
-<p>Cras id dui vehicula, bibendum odio vitae, gravida odio. Maecenas at sollicitudin nisi. Phasellus libero dolor, efficitur id dui et, varius tincidunt lectus. Donec non nisl vitae lorem semper maximus. Proin interdum arcu sollicitudin nisi ultrices rutrum.</p>
 
-<p><b>Recent blog entries</b></p>
-<p>This list mirrors the entries of <a href="blog.html">blog</a>.<br>
-Refer to the <a href="blogindex.html">complete index</a> for older entries.</p>
+<div class="container jumbotron">
+    <h4>
+        Recent Blog Entries
+    </h4>
+    <hr class="my-3">
+    <ul class ="">
 
-<ul>
- <!-- LB -->
+<!-- LB -->
+<li>2020 Oct 16 &ndash; <a href="https://rnsavinelli.github.io/blog.html#this-is-what-having-two-posts-look-like">This is what having two posts look like</a></li>
+<li>2020 Oct 16 &ndash; <a href="https://rnsavinelli.github.io/blog.html#this-is-what-a-post-looks-like">This is what a post looks like</a></li>
 <li>2020 Jul 16 &ndash; <a href="blog/this-is-what-having-two-posts-look-like.html">This is what having two posts look like</a></li>
 <li>2020 Jul 16 &ndash; <a href="blog/this-is-what-a-post-looks-like.html">This is what a post looks like</a></li>
 
-</ul>
-
-<p><b>Some more content</b></p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sed dapibus mauris. Aliquam erat volutpat. Morbi sit amet consectetur odio. Nulla quis suscipit nibh, eu gravida sapien. Aenean quis quam nunc. Quisque mollis sodales nisl, sed euismod quam pretium a. Vestibulum sem mauris, finibus quis interdum sed, volutpat sed sem.</p>
-<p>Cras id dui vehicula, bibendum odio vitae, gravida odio. Maecenas at sollicitudin nisi. Phasellus libero dolor, efficitur id dui et, varius tincidunt lectus. Donec non nisl vitae lorem semper maximus. Proin interdum arcu sollicitudin nisi ultrices rutrum.</p>
+    </ul>
+</div>
 
 </main>
 
-</body>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
+</body>
 </html>

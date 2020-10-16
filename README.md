@@ -69,3 +69,8 @@ When you `finalize` a blog post, it will be added directly below that line in th
 - `blog/.htaccess` acts as a "database" file. `blog-handler` stores filenames with their corresponding proper names and publishing dates there.
 - The other files in this repo just illustrate how you can use `blog-handler`. Only the `blog-handler` script itself is necessary.
 - Your `$EDITOR` variable should be set to your preferred text editor, vim will be assumed if you don't have one set.
+
+## About the theme
+
+The Bootstrap theme is a modified version of [Bootswatch's Sandstone theme](https://bootswatch.com/sandstone/) and it inherits its MIT License.
+To contibute to Bootswatch themes development consider visiting the https://github.com/thomaspark/bootswatch repository.
